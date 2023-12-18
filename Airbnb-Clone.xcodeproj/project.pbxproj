@@ -51,7 +51,11 @@
 		6430F71E2B30CB8800A39C5E /* Airbnb-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				6430F71F2B30CB8800A39C5E /* Airbnb_CloneApp.swift */,
+				6430F72D2B30CC7800A39C5E /* App */,
+				6430F7312B30CCA800A39C5E /* Core */,
+				6430F7302B30CCA700A39C5E /* Extensions */,
+				6430F72F2B30CCA600A39C5E /* Models */,
+				6430F72E2B30CCA500A39C5E /* Utils */,
 				6430F7212B30CB8800A39C5E /* ContentView.swift */,
 				6430F7232B30CB8800A39C5E /* Assets.xcassets */,
 				6430F7252B30CB8800A39C5E /* Preview Content */,
@@ -65,6 +69,42 @@
 				6430F7262B30CB8800A39C5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6430F72D2B30CC7800A39C5E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6430F71F2B30CB8800A39C5E /* Airbnb_CloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6430F72E2B30CCA500A39C5E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6430F72F2B30CCA600A39C5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6430F7302B30CCA700A39C5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6430F7312B30CCA800A39C5E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
