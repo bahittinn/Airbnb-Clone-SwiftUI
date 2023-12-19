@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+enum DestinationSearchOptions {
+    case location, dates, guests
+}
+
 struct DestinationSearchView: View {
     @Binding var show: Bool
     @State private var destination = ""
+    @State private var selectedOption: DestinationSearchOptions = .location
     
     var body: some View {
         VStack {
@@ -26,71 +31,81 @@ struct DestinationSearchView: View {
             // search view
             Group {
                 VStack(alignment: .leading) {
-                    Text("Where to?")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                    
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                            .imageScale(.small)
+                    if selectedOption == .location {
+                        Text("Where to?")
+                            .font(.title2)
+                            .fontWeight(.semibold)
                         
-                        TextField("Search destinations", text: $destination)
-                            .font(.subheadline)
+                        HStack {
+                            Image(systemName: "magnifyingglass")
+                                .imageScale(.small)
+                            
+                            TextField("Search destinations", text: $destination)
+                                .font(.subheadline)
+                        }
+                        .frame(height: 44)
+                        .padding(.horizontal)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(lineWidth: 1.0)
+                                .foregroundStyle(Color(.systemGray4))
+                        }
+                    } else {
+                        CollapsedPickerView(title: "Where", description: "Add destination")
                     }
-                    .frame(height: 44)
-                    .padding(.horizontal)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(lineWidth: 1.0)
-                            .foregroundStyle(Color(.systemGray4))
-                    }
+                    
                 }
                 .padding()
+                .frame(height: selectedOption == .location ? 120 : 64)
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .padding()
                 .shadow(radius: 10)
+                .onTapGesture {
+                    withAnimation(.linear) { selectedOption = .location }
+                }
             }
             
             // date selection view
-            Group {
-                VStack {
+            VStack {
+                if selectedOption == .dates {
                     HStack {
-                        Text("When")
-                            .foregroundStyle(.gray)
-                        
+                        Text("Show expanded view")
                         Spacer()
-                        
-                        Text("Add dates")
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
                     }
+                } else {
+                    CollapsedPickerView(title: "When", description: "Add dates")
                 }
-                .padding()
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                .shadow(radius: 10)
+            }
+            .padding()
+            .frame(height: selectedOption == .dates ? 120 : 64)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
+            .onTapGesture {
+                withAnimation(.linear) { selectedOption = .dates }
             }
             
-            Group {
-                VStack {
+            
+            VStack {
+                if selectedOption == .guests {
                     HStack {
-                        Text("Who")
-                            .foregroundStyle(.gray)
-                        
+                        Text("Show expanded view")
                         Spacer()
-                        
-                        Text("Add guests")
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
                     }
+                } else {
+                    CollapsedPickerView(title: "Who", description: "Add guests")
                 }
-                .padding()
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                .shadow(radius: 10)
+            }
+            .padding()
+            .frame(height: selectedOption == .guests ? 120 : 64)
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
+            .onTapGesture {
+                withAnimation(.linear) { selectedOption = .guests }
             }
         }
     }
@@ -99,5 +114,26 @@ struct DestinationSearchView: View {
 struct DestinationSearchView_Previews: PreviewProvider {
     static var previews: some View {
         DestinationSearchView(show: .constant(false))
+    }
+}
+
+struct CollapsedPickerView: View {
+    let title: String
+    let description: String
+    var body: some View {
+        Group {
+            VStack {
+                HStack {
+                    Text(title)
+                        .foregroundStyle(.gray)
+                    
+                    Spacer()
+                    
+                    Text(description)
+                        .fontWeight(.semibold)
+                        .font(.subheadline)
+                }
+            }
+        }
     }
 }
