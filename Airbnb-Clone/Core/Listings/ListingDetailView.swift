@@ -49,7 +49,7 @@ struct ListingDetailView: View {
             
             // host info view
             HStack {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text("Entire village hosted by John Smith")
                         .font(.headline)
                         .frame(width: 250, alignment: .leading)
@@ -62,15 +62,43 @@ struct ListingDetailView: View {
                     }
                     .font(.caption)
                 }
-                
+                .frame(width: 300, alignment: .leading)
+            
                 Spacer()
                 
-                Image("photo")
+                Image("maleprofilephoto")
                     .resizable()
                     .frame(width: 64, height: 64)
                     .scaledToFill()
                     .clipShape(Circle())
             }
+            .padding()
+            
+            Divider()
+
+            // listing features
+            VStack(alignment: .leading, spacing: 16) {
+                ForEach(0 ..< 2) { feature in
+                    HStack(spacing: 12) {
+                        Image(systemName: "medal")
+                        
+                        VStack(alignment: .leading) {
+                            Text("SuperHost")
+                                .font(.footnote)
+                                .fontWeight(.semibold)
+                            
+                            Text("Superhosts are experience, highly rated hosts who are commited to providing great starts for guests")
+                                .font(.caption)
+                                .foregroundStyle(.gray)
+                        }
+                        Spacer()
+                    }
+                }
+            }
+            .padding()
+            
+            Divider()
+            
         }
     }
 }
