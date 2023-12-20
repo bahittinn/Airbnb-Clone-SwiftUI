@@ -23,6 +23,7 @@
 		6430F74D2B32DBDB00A39C5E /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F74C2B32DBDB00A39C5E /* CustomButton.swift */; };
 		6430F74F2B32DCAE00A39C5E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F74E2B32DCAE00A39C5E /* MainTabView.swift */; };
 		6430F7532B32E02300A39C5E /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F7522B32E02300A39C5E /* Listing.swift */; };
+		6430F7552B32E91E00A39C5E /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F7542B32E91E00A39C5E /* DeveloperPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		6430F74C2B32DBDB00A39C5E /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		6430F74E2B32DCAE00A39C5E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6430F7522B32E02300A39C5E /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		6430F7542B32E91E00A39C5E /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		6430F7302B30CCA700A39C5E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6430F7542B32E91E00A39C5E /* DeveloperPreview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				6430F7492B32D79F00A39C5E /* ProfileOptionRowView.swift in Sources */,
 				6430F7452B3217EB00A39C5E /* DestinationSearchView.swift in Sources */,
 				6430F7222B30CB8800A39C5E /* ContentView.swift in Sources */,
+				6430F7552B32E91E00A39C5E /* DeveloperPreview.swift in Sources */,
 				6430F73C2B30CF3700A39C5E /* ListingItemView.swift in Sources */,
 				6430F73A2B30CD6300A39C5E /* ExploreView.swift in Sources */,
 				6430F74F2B32DCAE00A39C5E /* MainTabView.swift in Sources */,

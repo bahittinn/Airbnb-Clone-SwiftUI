@@ -19,6 +19,7 @@ struct Listing: Identifiable, Codable {
     var pricePerNight: Int
     let tatitude: Double
     let longitude: Double
+    let imageURLs: [String]
     let adress: String
     let city: String
     let state: String
@@ -26,7 +27,7 @@ struct Listing: Identifiable, Codable {
     var rating: Double
     var features: [ListingFeatures]
     var ameneties: [ListingAmenities]
-    var type: [ListingType]
+    var type: ListingType
 }
 
 enum ListingFeatures: Int, Codable, Identifiable, Hashable {
