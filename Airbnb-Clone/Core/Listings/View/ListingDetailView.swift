@@ -20,12 +20,7 @@ struct ListingDetailView: View {
             longitudeDelta: 10
         )
     )
-    
-    var images = ["image1",
-                  "image2",
-                  "image3",
-                  "image4"]
-    
+     
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -45,7 +40,7 @@ struct ListingDetailView: View {
                                     .fill(.white)
                                     .frame(width: 32, height: 32)
                             }
-                            .padding(32)
+                            .padding(50)
                     }
                 }
             }
@@ -141,9 +136,11 @@ struct ListingDetailView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 16) {
                             ForEach(1 ..< 5) { bedroom in
-                                VStack {
+                                VStack(alignment: .leading, spacing: 10) {
                                     Image(systemName: "bed.double")
                                     Text("Bedroom \(bedroom)")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
                                 }
                                 .frame(width: 132, height: 100)
                                 .overlay {
@@ -199,6 +196,7 @@ struct ListingDetailView: View {
                 .padding()
             }
         }
+        .toolbar(.hidden, for: .tabBar)
         .ignoresSafeArea()
         .padding(.bottom, 64)
         .overlay(alignment: .bottom) {
