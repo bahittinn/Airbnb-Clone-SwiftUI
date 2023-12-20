@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct ListingItemView: View {
-    
-    var images = ["image1",
-                  "image2",
-                  "image3",
-                  "image4"]
+    let listing: Listing
     
     var body: some View {
         VStack(spacing: 8) {
@@ -26,7 +22,7 @@ struct ListingItemView: View {
             HStack(alignment: .top) {
                 // details
                 VStack(alignment: .leading) {
-                    Text("Miami, Florida")
+                    Text("\(listing.city), \(listing.state)")
                         .fontWeight(.semibold)
                         .foregroundStyle(.black)
                     
@@ -39,7 +35,7 @@ struct ListingItemView: View {
                         .foregroundStyle(.black)
                     
                     HStack(spacing: 4) {
-                        Text("$567")
+                        Text("$\(listing.pricePerNight)")
                             .fontWeight(.semibold)
                             .foregroundStyle(.black)
                         Text("night")
@@ -54,7 +50,7 @@ struct ListingItemView: View {
                 
                 HStack(spacing: 2) {
                     Image(systemName: "star.fill")
-                    Text("4.86")
+                    Text("\(listing.rating)")
                 }
                 .foregroundStyle(.black)
             }
@@ -65,6 +61,6 @@ struct ListingItemView: View {
 
 struct ListingView_Previews: PreviewProvider {
     static var previews: some View {
-        ListingItemView()
+        ListingItemView(listing: DeveloperPreview.shared.listings[0])
     }
 }

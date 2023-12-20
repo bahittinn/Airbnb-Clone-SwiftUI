@@ -24,6 +24,8 @@
 		6430F74F2B32DCAE00A39C5E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F74E2B32DCAE00A39C5E /* MainTabView.swift */; };
 		6430F7532B32E02300A39C5E /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F7522B32E02300A39C5E /* Listing.swift */; };
 		6430F7552B32E91E00A39C5E /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F7542B32E91E00A39C5E /* DeveloperPreview.swift */; };
+		6430F75A2B32ED9B00A39C5E /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F7592B32ED9B00A39C5E /* ExploreViewModel.swift */; };
+		6430F75C2B32EDE200A39C5E /* ExploreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6430F75B2B32EDE200A39C5E /* ExploreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		6430F74E2B32DCAE00A39C5E /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6430F7522B32E02300A39C5E /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		6430F7542B32E91E00A39C5E /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
+		6430F7592B32ED9B00A39C5E /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		6430F75B2B32EDE200A39C5E /* ExploreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +150,9 @@
 		6430F7322B30CCFF00A39C5E /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				6430F7392B30CD6300A39C5E /* ExploreView.swift */,
-				6430F73D2B317D5200A39C5E /* SearchAndFilterBar.swift */,
-				6430F7442B3217EB00A39C5E /* DestinationSearchView.swift */,
+				6430F7562B32ED6D00A39C5E /* Service */,
+				6430F7572B32ED7000A39C5E /* View */,
+				6430F7582B32ED7200A39C5E /* ViewModel */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -226,6 +230,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6430F7562B32ED6D00A39C5E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6430F75B2B32EDE200A39C5E /* ExploreService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6430F7572B32ED7000A39C5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6430F7392B30CD6300A39C5E /* ExploreView.swift */,
+				6430F73D2B317D5200A39C5E /* SearchAndFilterBar.swift */,
+				6430F7442B3217EB00A39C5E /* DestinationSearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6430F7582B32ED7200A39C5E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6430F7592B32ED9B00A39C5E /* ExploreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +329,7 @@
 				6430F7432B3184A700A39C5E /* ListingImageCarouselView.swift in Sources */,
 				6430F7472B32D4DB00A39C5E /* ProfileView.swift in Sources */,
 				6430F7492B32D79F00A39C5E /* ProfileOptionRowView.swift in Sources */,
+				6430F75C2B32EDE200A39C5E /* ExploreService.swift in Sources */,
 				6430F7452B3217EB00A39C5E /* DestinationSearchView.swift in Sources */,
 				6430F7222B30CB8800A39C5E /* ContentView.swift in Sources */,
 				6430F7552B32E91E00A39C5E /* DeveloperPreview.swift in Sources */,
@@ -308,6 +339,7 @@
 				6430F7532B32E02300A39C5E /* Listing.swift in Sources */,
 				6430F74B2B32DA2600A39C5E /* WishListView.swift in Sources */,
 				6430F74D2B32DBDB00A39C5E /* CustomButton.swift in Sources */,
+				6430F75A2B32ED9B00A39C5E /* ExploreViewModel.swift in Sources */,
 				6430F73E2B317D5200A39C5E /* SearchAndFilterBar.swift in Sources */,
 				6430F7402B31843C00A39C5E /* ListingDetailView.swift in Sources */,
 				6430F7202B30CB8800A39C5E /* Airbnb_CloneApp.swift in Sources */,
