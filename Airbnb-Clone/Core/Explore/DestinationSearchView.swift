@@ -21,16 +21,31 @@ struct DestinationSearchView: View {
     
     var body: some View {
         VStack {
-            Button {
-                withAnimation(.easeIn) {
-                    show.toggle()
+            Group {
+                HStack {
+                    Button {
+                        withAnimation(.easeIn) {
+                            show.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "xmark.circle")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                    }
+                    
+                    Spacer()
+                    
+                    if !destination.isEmpty {
+                        Button("Clear") {
+                             destination = ""
+                        }
+                        .foregroundStyle(.black)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    }
                 }
-            } label: {
-                Image(systemName: "xmark.circle")
-                    .imageScale(.large)
-                    .foregroundStyle(.black)
+                .padding()
             }
-            
             // search view
             Group {
                 VStack(alignment: .leading) {
@@ -58,12 +73,8 @@ struct DestinationSearchView: View {
                     }
                     
                 }
-                .padding()
-                .frame(height: selectedOption == .location ? 120 : 64)
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                .shadow(radius: 10)
+                .modifier(CollapsibleDestinationViewModifier())
+                .frame(height: selectedOption == .location ? 120 : 64) 
                 .onTapGesture {
                     withAnimation(.linear) { selectedOption = .location }
                 }
@@ -73,7 +84,7 @@ struct DestinationSearchView: View {
                 // date selection view
                 VStack(alignment: .leading) {
                     if selectedOption == .dates {
-                         Text("When's your trip?")
+                        Text("When's your trip?")
                             .font(.title2)
                             .fontWeight(.semibold)
                         
@@ -92,12 +103,8 @@ struct DestinationSearchView: View {
                         CollapsedPickerView(title: "When", description: "Add dates")
                     }
                 }
-                .padding()
+                .modifier(CollapsibleDestinationViewModifier())
                 .frame(height: selectedOption == .dates ? 180 : 64)
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                .shadow(radius: 10)
                 .onTapGesture {
                     withAnimation(.linear) { selectedOption = .dates }
                 }
@@ -118,28 +125,37 @@ struct DestinationSearchView: View {
                             guard numGuests > 0 else { return }
                             numGuests -= 1
                         }
-
+                        
                     } else {
                         CollapsedPickerView(title: "Who", description: "Add guests")
                     }
                 }
-                .padding()
+                .modifier(CollapsibleDestinationViewModifier())
                 .frame(height: selectedOption == .guests ? 120 : 64)
-                .background(.white)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
-                .padding()
-                .shadow(radius: 10)
                 .onTapGesture {
                     withAnimation(.linear) { selectedOption = .guests }
                 }
             }
+            Spacer()
         }
+       
     }
 }
 
 struct DestinationSearchView_Previews: PreviewProvider {
     static var previews: some View {
         DestinationSearchView(show: .constant(false))
+    }
+}
+
+struct CollapsibleDestinationViewModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+            .shadow(radius: 10)
     }
 }
 

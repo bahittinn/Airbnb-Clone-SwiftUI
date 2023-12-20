@@ -18,7 +18,7 @@ struct ExploreView: View {
                 ScrollView {
                     SearchAndFilterBar()
                         .onTapGesture {
-                            withAnimation(.easeIn) {
+                            withAnimation(.linear) {
                                 showDestinationSearchView.toggle()
                             }
                         }
